@@ -1,0 +1,8 @@
+[target.thumbv7m-none-eabi]
+runner = "gdb -q -x openocd.gdb"
+# Always compile for the instruction set of the STM32F1
+# use the Tlink.x scrip from the cortex-m-rt crate
+rustflags = [ "-C", "link-arg=-Tlink.x" ]
+
+[build]
+target = "thumbv7m-none-eabi"
